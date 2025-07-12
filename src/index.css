@@ -38,13 +38,28 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Beauty-focused colors */
+    /* Beauty-focused colors - Vibrant makeup palette */
     --beauty-primary: 340 82% 52%;
     --beauty-secondary: 25 95% 53%;
     --beauty-warm: 15 86% 63%;
     --beauty-cool: 276 50% 75%;
     --beauty-neutral: 34 44% 69%;
+    --beauty-pink: 330 60% 65%;
+    --beauty-coral: 14 91% 65%;
+    --beauty-gold: 43 74% 66%;
+    --beauty-rose-gold: 20 43% 72%;
+    --beauty-lavender: 270 67% 75%;
+    
+    /* Gradients */
     --beauty-gradient: linear-gradient(135deg, hsl(340 82% 52%), hsl(25 95% 53%));
+    --beauty-gradient-soft: linear-gradient(135deg, hsl(330 60% 65%), hsl(270 67% 75%));
+    --beauty-gradient-glow: linear-gradient(135deg, hsl(43 74% 66%), hsl(20 43% 72%));
+    --beauty-gradient-coral: linear-gradient(135deg, hsl(14 91% 65%), hsl(330 60% 65%));
+    
+    /* Shadows for depth */
+    --beauty-shadow-soft: 0 4px 20px hsl(340 82% 52% / 0.15);
+    --beauty-shadow-glow: 0 0 30px hsl(43 74% 66% / 0.3);
+    --beauty-shadow-card: 0 8px 32px hsl(340 82% 52% / 0.1);
 
     --sidebar-background: 0 0% 98%;
 
