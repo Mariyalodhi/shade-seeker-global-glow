@@ -1,73 +1,164 @@
-# Welcome to your Lovable project
+# Shade Seeker - Makeup Shade Finder Tool
 
-## Project info
+A responsive, multilingual makeup shade finder tool that helps users select the perfect foundation and makeup shades based on their skin tone, undertone, and geographic region.
 
-**URL**: https://lovable.dev/projects/a6de6b25-ce4d-4ebc-8963-b40f2a95738c
+## Features
 
-## How can I edit this code?
+✨ **AI-Powered Recommendations**: Get personalized makeup shade suggestions based on skin analysis
+🌍 **Multilingual Support**: Available in English, Spanish, French, and Indonesian
+📱 **Mobile-Friendly**: Fully responsive design that works on all devices
+🔗 **WordPress Embeddable**: Easy integration with WordPress websites
+💄 **Multiple Brands**: Recommendations from international and South Asian beauty brands
+🛒 **Affiliate Ready**: Built-in support for affiliate links
 
-There are several ways of editing your application.
+## Live Demo
 
-**Use Lovable**
+Visit [https://your-domain.com](https://your-domain.com) to try the tool.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a6de6b25-ce4d-4ebc-8963-b40f2a95738c) and start prompting.
+## How It Works
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Personal Information**: Users enter their name
+2. **Skin Analysis**: Select skin tone (fair, light, medium, deep)
+3. **Undertone Detection**: Choose undertone (cool, warm, neutral)
+4. **Regional Preferences**: Select geographic region for localized recommendations
+5. **Get Results**: Receive personalized foundation and makeup shade recommendations
 
-**Use your preferred IDE**
+## Supported Regions
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- South Asia
+- Southeast Asia
+- Middle East
+- Europe
+- North America
+- Africa
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Supported Languages
 
-Follow these steps:
+- 🇺🇸 English
+- 🇪🇸 Spanish (Español)
+- 🇫🇷 French (Français)
+- 🇮🇩 Indonesian (Bahasa Indonesia)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Technology Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS + Shadcn/ui
+- **State Management**: React Hooks
+- **Internationalization**: Custom translation system
+- **Build Tool**: Vite
+- **Deployment**: Vercel/Netlify ready
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/shade-seeker.git
+   cd shade-seeker
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## WordPress Integration
+
+### Method 1: iframe Embed
+
+Add this code to your WordPress post or page:
+
+```html
+<iframe 
+  src="https://your-domain.com/widget?lang=en&theme=light"
+  width="100%"
+  height="600px"
+  frameborder="0"
+  scrolling="auto"
+  style="border: none; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"
+  title="Makeup Shade Finder Tool"
+></iframe>
 ```
 
-**Edit a file directly in GitHub**
+### Method 2: JavaScript Widget
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Add this to your WordPress theme's footer:
 
-**Use GitHub Codespaces**
+```html
+<div id="shade-seeker-widget" style="width: 100%; height: 600px;"></div>
+<script>
+  (function() {
+    var script = document.createElement('script');
+    script.src = 'https://your-domain.com/widget.js';
+    script.onload = function() {
+      ShadeSeekerWidget.init({
+        container: '#shade-seeker-widget',
+        language: 'en',
+        theme: 'light'
+      });
+    };
+    document.head.appendChild(script);
+  })();
+</script>
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Customization Options
 
-## What technologies are used for this project?
+- `lang`: Language (en, es, fr, id)
+- `theme`: Theme (light, dark)
+- `width`: Widget width (default: 100%)
+- `height`: Widget height (default: 600px)
 
-This project is built with:
+## Adding New Languages
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Add language to translations**
+   ```typescript
+   // src/utils/translations.ts
+   export const translations: Record<Language, Translations> = {
+     // ... existing languages
+     'pt': {
+       appTitle: 'Buscador de Tons',
+       // ... add all translations
+     }
+   };
+   ```
 
-## How can I deploy this project?
+2. **Update language selector**
+   ```typescript
+   // src/components/LanguageSelector.tsx
+   const languages = [
+     // ... existing languages
+     { code: 'pt' as Language, name: 'Português', flag: '🇵🇹' },
+   ];
+   ```
 
-Simply open [Lovable](https://lovable.dev/projects/a6de6b25-ce4d-4ebc-8963-b40f2a95738c) and click on Share -> Publish.
+## Adding New Beauty Brands
 
-## Can I connect a custom domain to my Lovable project?
+1. **Update recommendations logic**
+   ```typescript
+   // src/components/MakeupShadeFinder.tsx
+   const getProductRecommendations = (profile: UserProfile): ProductRecommendation[] => {
+     // Add new brand recommendations based on user profile
+   };
+   ```
 
-Yes, you can!
+2. **Add brand-specific logic for different regions**
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
