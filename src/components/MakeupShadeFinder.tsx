@@ -234,7 +234,7 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
     }
     
     // Filter by brand if selected
-    if (selectedBrand && products.length > 0) {
+    if (selectedBrand && selectedBrand !== 'any' && products.length > 0) {
       products = products.filter(product => product.brand === selectedBrand);
     }
 
@@ -469,7 +469,7 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
                         <SelectValue placeholder="Any brand..." />
                       </SelectTrigger>
                       <SelectContent className="bg-white border-beauty-primary/20">
-                        <SelectItem value="" className="text-lg">Any brand</SelectItem>
+                        <SelectItem value="any" className="text-lg">Any brand</SelectItem>
                         {getAvailableBrands().map((brand: string) => (
                           <SelectItem key={brand} value={brand} className="text-lg">
                             {brand}
