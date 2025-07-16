@@ -300,18 +300,11 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
   ];
 
   const productTypeOptions = [
-    { value: 'foundation', label: t.productTypes.foundation, icon: '💄' },
-    { value: 'concealer', label: t.productTypes.concealer, icon: '✨' },
-    { value: 'highlighter', label: t.productTypes.highlighter, icon: '✨' },
-    { value: 'lipstick', label: t.productTypes.lipstick, icon: '💋' },
-    { value: 'blush', label: t.productTypes.blush, icon: '🌸' }
+    { value: 'foundation', label: t.productTypes.foundation, icon: '💄', title: 'Select your foundation', description: 'Find the perfect base for your skin' },
+    { value: 'concealer', label: t.productTypes.concealer, icon: '✨', title: 'Select your concealer', description: 'Hide imperfections with confidence' },
+    { value: 'lipstick', label: t.productTypes.lipstick, icon: '💋', title: 'Select your lipstick', description: 'Express yourself with bold colors' }
   ];
 
-  const budgetOptions = [
-    { value: 'low', label: t.budgetRanges.low, icon: '💝', gradient: 'from-green-100 to-emerald-100' },
-    { value: 'medium', label: t.budgetRanges.medium, icon: '💄', gradient: 'from-purple-100 to-pink-100' },
-    { value: 'high', label: t.budgetRanges.high, icon: '👑', gradient: 'from-yellow-100 to-amber-100' }
-  ];
 
   const getAvailableBrands = (): string[] => {
     if (!region) return [];
@@ -330,56 +323,54 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
     return [];
   };
 
-  const handleAutoRecommend = () => {
+  const handleProductSelection = (selectedProductType: string) => {
     if (!skinTone || !undertone || !region) {
       alert(t.selectRegionFirst);
       return;
     }
 
-    console.log('Starting recommendation with:', { skinTone, undertone, region, productType, budget, selectedBrand });
+    setProductType(selectedProductType);
 
     let products = [];
     
     // Get products from regional brands database
     const regionData = (regionalBrands as any)[region];
-    console.log('Region data:', regionData);
     
-    if (regionData && regionData[productType]) {
-      products = [...regionData[productType]];
-      console.log('Found products for', productType, ':', products);
+    if (regionData && regionData[selectedProductType]) {
+      products = [...regionData[selectedProductType]];
     } else {
-      console.log('No products found for', productType, 'in', region);
       // If no products for specific type, show foundation as fallback
       if (regionData && regionData.foundation) {
         products = [...regionData.foundation];
-        console.log('Using foundation as fallback:', products);
       }
-    }
-    
-    // Filter by budget if selected
-    if (budget && products.length > 0) {
-      const originalLength = products.length;
-      products = products.filter(product => product.priceRange === budget);
-      console.log(`Budget filter: ${originalLength} -> ${products.length} products`);
     }
     
     // Filter by brand if selected
     if (selectedBrand && selectedBrand !== 'any' && products.length > 0) {
-      const originalLength = products.length;
       products = products.filter(product => product.brand === selectedBrand);
-      console.log(`Brand filter: ${originalLength} -> ${products.length} products`);
     }
 
-    console.log('Final products:', products);
+    // Show diverse price range products (mix of low, medium, high)
+    const diverseProducts = [];
+    const lowPrice = products.filter(p => p.priceRange === 'low').slice(0, 3);
+    const mediumPrice = products.filter(p => p.priceRange === 'medium').slice(0, 3);
+    const highPrice = products.filter(p => p.priceRange === 'high').slice(0, 3);
+    
+    diverseProducts.push(...lowPrice, ...mediumPrice, ...highPrice);
+    
+    // If we don't have enough diverse products, fill with remaining
+    if (diverseProducts.length < 9) {
+      const remaining = products.filter(p => !diverseProducts.includes(p)).slice(0, 9 - diverseProducts.length);
+      diverseProducts.push(...remaining);
+    }
 
     setResults({
       skinTone,
       undertone,
       region,
-      productType,
-      budget,
+      productType: selectedProductType,
       selectedBrand,
-      products: products.slice(0, 12)
+      products: diverseProducts.slice(0, 9)
     });
   };
 
@@ -438,201 +429,118 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
           </CardHeader>
           
           <CardContent className="p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Left Column - Main Selections */}
-              <div className="space-y-8">
-                {/* Region Selection */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <Globe className="w-5 h-5 text-beauty-primary" />
-                    <Label className="text-lg font-semibold text-gray-800">
-                      {t.regionLabel}
-                    </Label>
-                  </div>
-                  <Select value={region} onValueChange={setRegion}>
-                    <SelectTrigger className="h-12 text-lg border-beauty-primary/30 focus:border-beauty-primary rounded-xl">
-                      <SelectValue placeholder="Choose your region..." />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white border-beauty-primary/20">
-                      {regionOptions.map((option) => (
-                        <SelectItem key={option.value} value={option.value} className="text-lg">
-                          <div className="flex items-center gap-2">
-                            <span>{option.flag}</span>
-                            <span>{option.label}</span>
-                          </div>
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+            {/* User Profile Setup */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              {/* Region Selection */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <Globe className="w-5 h-5 text-beauty-primary" />
+                  <Label className="text-lg font-semibold text-gray-800">
+                    {t.regionLabel}
+                  </Label>
                 </div>
-
-                {/* Skin Tone Selection */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <Palette className="w-5 h-5 text-beauty-primary" />
-                    <Label className="text-lg font-semibold text-gray-800">
-                      {t.skinToneLabel}
-                    </Label>
-                  </div>
-                  <RadioGroup value={skinTone} onValueChange={setSkinTone}>
-                    <div className="grid grid-cols-2 gap-3">
-                      {skinToneOptions.map((option) => (
-                        <div key={option.value} className="relative">
-                          <div className={`p-4 rounded-2xl border-2 transition-all duration-300 cursor-pointer
-                            ${skinTone === option.value 
-                              ? 'border-beauty-primary bg-gradient-to-r ' + option.gradient + ' shadow-beauty-soft scale-105' 
-                              : 'border-gray-200 hover:border-beauty-primary/50 bg-white hover:bg-gradient-to-r hover:' + option.gradient
-                            }`}>
-                            <div className="flex items-center space-x-3">
-                              <RadioGroupItem value={option.value} id={option.value} className="sr-only" />
-                              <Label htmlFor={option.value} className="flex items-center gap-3 cursor-pointer w-full">
-                                <span className="text-2xl">{option.icon}</span>
-                                <span className="font-medium text-gray-800">{option.label}</span>
-                              </Label>
-                            </div>
-                          </div>
+                <Select value={region} onValueChange={setRegion}>
+                  <SelectTrigger className="h-12 text-lg border-beauty-primary/30 focus:border-beauty-primary rounded-xl">
+                    <SelectValue placeholder="Choose your region..." />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-beauty-primary/20">
+                    {regionOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value} className="text-lg">
+                        <div className="flex items-center gap-2">
+                          <span>{option.flag}</span>
+                          <span>{option.label}</span>
                         </div>
-                      ))}
-                    </div>
-                  </RadioGroup>
-                </div>
-
-                {/* Undertone Selection */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <Star className="w-5 h-5 text-beauty-primary" />
-                    <Label className="text-lg font-semibold text-gray-800">
-                      {t.undertoneLabel}
-                    </Label>
-                  </div>
-                  <RadioGroup value={undertone} onValueChange={setUndertone}>
-                    <div className="grid grid-cols-3 gap-3">
-                      {undertoneOptions.map((option) => (
-                        <div key={option.value} className="relative">
-                          <div className={`p-4 rounded-2xl border-2 transition-all duration-300 cursor-pointer
-                            ${undertone === option.value 
-                              ? 'border-beauty-primary bg-gradient-to-r ' + option.gradient + ' shadow-beauty-soft scale-105' 
-                              : 'border-gray-200 hover:border-beauty-primary/50 bg-white hover:bg-gradient-to-r hover:' + option.gradient
-                            }`}>
-                            <div className="flex flex-col items-center space-y-2">
-                              <RadioGroupItem value={option.value} id={option.value} className="sr-only" />
-                              <Label htmlFor={option.value} className="flex flex-col items-center gap-2 cursor-pointer">
-                                <span className="text-2xl">{option.icon}</span>
-                                <span className="font-medium text-gray-800 text-center">{option.label}</span>
-                              </Label>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </RadioGroup>
-                </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
-              {/* Right Column - Additional Options */}
-              <div className="space-y-8">
-                {/* Product Type Selection */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <Package className="w-5 h-5 text-beauty-primary" />
-                    <Label className="text-lg font-semibold text-gray-800">
-                      {t.productTypeLabel}
-                    </Label>
-                  </div>
-                  <RadioGroup value={productType} onValueChange={setProductType}>
-                    <div className="grid grid-cols-2 gap-3">
-                      {productTypeOptions.map((option) => (
-                        <div key={option.value} className="relative">
-                          <div className={`p-3 rounded-xl border-2 transition-all duration-300 cursor-pointer
-                            ${productType === option.value 
-                              ? 'border-beauty-primary bg-beauty-gradient-soft text-white shadow-beauty-soft' 
-                              : 'border-gray-200 hover:border-beauty-primary/50 bg-white'
-                            }`}>
-                            <div className="flex items-center space-x-2">
-                              <RadioGroupItem value={option.value} id={option.value} className="sr-only" />
-                              <Label htmlFor={option.value} className="flex items-center gap-2 cursor-pointer w-full">
-                                <span className="text-lg">{option.icon}</span>
-                                <span className="font-medium">{option.label}</span>
-                              </Label>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </RadioGroup>
+              {/* Skin Tone Dropdown */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <Palette className="w-5 h-5 text-beauty-primary" />
+                  <Label className="text-lg font-semibold text-gray-800">
+                    {t.skinToneLabel}
+                  </Label>
                 </div>
-
-                {/* Budget Selection */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <DollarSign className="w-5 h-5 text-beauty-primary" />
-                    <Label className="text-lg font-semibold text-gray-800">
-                      {t.budgetLabel}
-                    </Label>
-                  </div>
-                  <RadioGroup value={budget} onValueChange={setBudget}>
-                    <div className="space-y-3">
-                      {budgetOptions.map((option) => (
-                        <div key={option.value} className="relative">
-                          <div className={`p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer
-                            ${budget === option.value 
-                              ? 'border-beauty-primary bg-gradient-to-r ' + option.gradient + ' shadow-beauty-soft' 
-                              : 'border-gray-200 hover:border-beauty-primary/50 bg-white hover:bg-gradient-to-r hover:' + option.gradient
-                            }`}>
-                            <div className="flex items-center space-x-3">
-                              <RadioGroupItem value={option.value} id={option.value} className="sr-only" />
-                              <Label htmlFor={option.value} className="flex items-center gap-3 cursor-pointer w-full">
-                                <span className="text-xl">{option.icon}</span>
-                                <span className="font-medium text-gray-800">{option.label}</span>
-                              </Label>
-                            </div>
-                          </div>
+                <Select value={skinTone} onValueChange={setSkinTone}>
+                  <SelectTrigger className="h-12 text-lg border-beauty-primary/30 focus:border-beauty-primary rounded-xl">
+                    <SelectValue placeholder="Select skin tone..." />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-beauty-primary/20">
+                    {skinToneOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value} className="text-lg">
+                        <div className="flex items-center gap-2">
+                          <span>{option.icon}</span>
+                          <span>{option.label}</span>
                         </div>
-                      ))}
-                    </div>
-                  </RadioGroup>
-                </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-                {/* Brand Selection */}
-                {region && (
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-2">
-                      <Crown className="w-5 h-5 text-beauty-primary" />
-                      <Label className="text-lg font-semibold text-gray-800">
-                        {t.brandSelectLabel}
-                      </Label>
-                    </div>
-                    <Select value={selectedBrand} onValueChange={setSelectedBrand}>
-                      <SelectTrigger className="h-12 text-lg border-beauty-primary/30 focus:border-beauty-primary rounded-xl">
-                        <SelectValue placeholder="Any brand..." />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white border-beauty-primary/20">
-                        <SelectItem value="any" className="text-lg">Any brand</SelectItem>
-                        {getAvailableBrands().map((brand: string) => (
-                          <SelectItem key={brand} value={brand} className="text-lg">
-                            {brand}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                )}
+              {/* Undertone Dropdown */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <Star className="w-5 h-5 text-beauty-primary" />
+                  <Label className="text-lg font-semibold text-gray-800">
+                    {t.undertoneLabel}
+                  </Label>
+                </div>
+                <Select value={undertone} onValueChange={setUndertone}>
+                  <SelectTrigger className="h-12 text-lg border-beauty-primary/30 focus:border-beauty-primary rounded-xl">
+                    <SelectValue placeholder="Select undertone..." />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-beauty-primary/20">
+                    {undertoneOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value} className="text-lg">
+                        <div className="flex items-center gap-2">
+                          <span>{option.icon}</span>
+                          <span>{option.label}</span>
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </div>
 
             <Separator className="my-8 bg-gradient-to-r from-beauty-primary/20 to-beauty-secondary/20" />
 
-            {/* Action Button */}
-            <div className="text-center">
-              <Button 
-                onClick={handleAutoRecommend}
-                className="h-14 px-12 text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 text-white rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300"
-                disabled={!skinTone || !undertone || !region}
-              >
-                <Zap className="mr-2 w-5 h-5" />
-                {t.autoRecommendButton}
-              </Button>
+            {/* Main Product Selection Boxes */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {productTypeOptions.map((option) => (
+                <Card 
+                  key={option.value}
+                  className="cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-purple-200 hover:border-purple-400 rounded-3xl overflow-hidden bg-gradient-to-br from-white to-purple-50"
+                  onClick={() => handleProductSelection(option.value)}
+                >
+                  <CardContent className="p-8 text-center">
+                    <div className="text-6xl mb-4 animate-pulse">{option.icon}</div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{option.title}</h3>
+                    <p className="text-gray-600 mb-6">{option.description}</p>
+                    <Button 
+                      className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 text-white rounded-xl font-semibold"
+                      disabled={!skinTone || !undertone || !region}
+                    >
+                      <Package className="mr-2 w-4 h-4" />
+                      Shop Now
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
+
+            {/* Quick Status */}
+            {(!skinTone || !undertone || !region) && (
+              <div className="text-center mt-6 p-4 bg-purple-50 rounded-xl border border-purple-200">
+                <p className="text-purple-700 font-medium">
+                  Please select your region, skin tone, and undertone first to get personalized recommendations
+                </p>
+              </div>
+            )}
           </CardContent>
         </Card>
 
