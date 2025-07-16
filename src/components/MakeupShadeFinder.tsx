@@ -17,91 +17,206 @@ import LanguageSelector from './LanguageSelector';
 const regionalBrands = {
   pakistan: {
     foundation: [
-      { brand: 'Masarrat Misbah', shade: 'Fair Porcelain', price: 35, priceRange: 'high', affiliate: '#' },
-      { brand: 'Luscious Cosmetics', shade: 'Natural Fair', price: 12, priceRange: 'low', affiliate: '#' },
-      { brand: 'Miss Rose', shade: 'Ivory Glow', price: 8, priceRange: 'low', affiliate: '#' },
-      { brand: 'Rivaj UK', shade: 'Cool Fair', price: 10, priceRange: 'low', affiliate: '#' },
-      { brand: 'Beautify by Amna', shade: 'Fair Blush', price: 22, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Bling by Nadia Hussain', shade: 'Radiant Fair', price: 18, priceRange: 'medium', affiliate: '#' },
-      { brand: 'J.', shade: 'Porcelain Perfect', price: 25, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Zay Beauty', shade: 'Cool Ivory', price: 28, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Medora', shade: 'Porcelain Pink', price: 14, priceRange: 'low', affiliate: '#' },
-      { brand: 'Alezem Beauty', shade: 'Fair Silk', price: 20, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Kryolan', shade: 'Ultra Fair', price: 45, priceRange: 'high', affiliate: '#' },
-      { brand: 'Maybelline', shade: 'Ivory Classic', price: 12, priceRange: 'low', affiliate: '#' },
-      { brand: 'Entice Cosmetics', shade: 'Fair Natural', price: 16, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Essence', shade: 'Fair Ivory', price: 5, priceRange: 'low', affiliate: '#' },
-      { brand: 'L\'Oréal', shade: 'Ivory Rose', price: 15, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Sapphire', shade: 'Fair Elegance', price: 30, priceRange: 'high', affiliate: '#' }
+      { brand: 'Masarrat Misbah', shade: 'Fair Porcelain', price: 35, priceRange: 'high', affiliate: 'https://example.com/masarrat-misbah-foundation' },
+      { brand: 'Luscious Cosmetics', shade: 'Natural Fair', price: 12, priceRange: 'low', affiliate: 'https://example.com/luscious-foundation' },
+      { brand: 'Miss Rose', shade: 'Ivory Glow', price: 8, priceRange: 'low', affiliate: 'https://example.com/miss-rose-foundation' },
+      { brand: 'Rivaj UK', shade: 'Cool Fair', price: 10, priceRange: 'low', affiliate: 'https://example.com/rivaj-foundation' },
+      { brand: 'Beautify by Amna', shade: 'Fair Blush', price: 22, priceRange: 'medium', affiliate: 'https://example.com/beautify-foundation' },
+      { brand: 'Bling by Nadia Hussain', shade: 'Radiant Fair', price: 18, priceRange: 'medium', affiliate: 'https://example.com/bling-foundation' },
+      { brand: 'J.', shade: 'Porcelain Perfect', price: 25, priceRange: 'medium', affiliate: 'https://example.com/j-foundation' },
+      { brand: 'Zay Beauty', shade: 'Cool Ivory', price: 28, priceRange: 'medium', affiliate: 'https://example.com/zay-foundation' },
+      { brand: 'Medora', shade: 'Porcelain Pink', price: 14, priceRange: 'low', affiliate: 'https://example.com/medora-foundation' },
+      { brand: 'Alezem Beauty', shade: 'Fair Silk', price: 20, priceRange: 'medium', affiliate: 'https://example.com/alezem-foundation' },
+      { brand: 'Kryolan', shade: 'Ultra Fair', price: 45, priceRange: 'high', affiliate: 'https://example.com/kryolan-foundation' },
+      { brand: 'Maybelline', shade: 'Ivory Classic', price: 12, priceRange: 'low', affiliate: 'https://example.com/maybelline-foundation' },
+      { brand: 'Entice Cosmetics', shade: 'Fair Natural', price: 16, priceRange: 'medium', affiliate: 'https://example.com/entice-foundation' },
+      { brand: 'Essence', shade: 'Fair Ivory', price: 5, priceRange: 'low', affiliate: 'https://example.com/essence-foundation' },
+      { brand: 'L\'Oréal', shade: 'Ivory Rose', price: 15, priceRange: 'medium', affiliate: 'https://example.com/loreal-foundation' },
+      { brand: 'Sapphire', shade: 'Fair Elegance', price: 30, priceRange: 'high', affiliate: 'https://example.com/sapphire-foundation' }
     ],
     concealer: [
-      { brand: 'Masarrat Misbah', shade: 'Fair Coverage', price: 25, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Luscious Cosmetics', shade: 'Light Concealer', price: 8, priceRange: 'low', affiliate: '#' },
-      { brand: 'Beautify by Amna', shade: 'Perfect Cover', price: 15, priceRange: 'medium', affiliate: '#' }
+      { brand: 'Masarrat Misbah', shade: 'Fair Coverage', price: 25, priceRange: 'medium', affiliate: 'https://example.com/masarrat-concealer' },
+      { brand: 'Luscious Cosmetics', shade: 'Light Concealer', price: 8, priceRange: 'low', affiliate: 'https://example.com/luscious-concealer' },
+      { brand: 'Beautify by Amna', shade: 'Perfect Cover', price: 15, priceRange: 'medium', affiliate: 'https://example.com/beautify-concealer' },
+      { brand: 'Zay Beauty', shade: 'Flawless Hide', price: 20, priceRange: 'medium', affiliate: 'https://example.com/zay-concealer' },
+      { brand: 'Maybelline', shade: 'Fit Me', price: 10, priceRange: 'low', affiliate: 'https://example.com/maybelline-concealer' }
     ],
     highlighter: [
-      { brand: 'Zay Beauty', shade: 'Golden Glow', price: 20, priceRange: 'medium', affiliate: '#' },
-      { brand: 'J.', shade: 'Pearl Highlight', price: 18, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Masarrat Misbah', shade: 'Champagne Glow', price: 30, priceRange: 'high', affiliate: '#' }
+      { brand: 'Zay Beauty', shade: 'Golden Glow', price: 20, priceRange: 'medium', affiliate: 'https://example.com/zay-highlighter' },
+      { brand: 'J.', shade: 'Pearl Highlight', price: 18, priceRange: 'medium', affiliate: 'https://example.com/j-highlighter' },
+      { brand: 'Masarrat Misbah', shade: 'Champagne Glow', price: 30, priceRange: 'high', affiliate: 'https://example.com/masarrat-highlighter' },
+      { brand: 'Beautify by Amna', shade: 'Rose Gold', price: 22, priceRange: 'medium', affiliate: 'https://example.com/beautify-highlighter' }
     ],
     lipstick: [
-      { brand: 'Luscious Cosmetics', shade: 'Rose Pink', price: 10, priceRange: 'low', affiliate: '#' },
-      { brand: 'Beautify by Amna', shade: 'Coral Bliss', price: 18, priceRange: 'medium', affiliate: '#' },
-      { brand: 'Bling by Nadia Hussain', shade: 'Berry Bold', price: 15, priceRange: 'medium', affiliate: '#' }
+      { brand: 'Luscious Cosmetics', shade: 'Rose Pink', price: 10, priceRange: 'low', affiliate: 'https://example.com/luscious-lipstick' },
+      { brand: 'Beautify by Amna', shade: 'Coral Bliss', price: 18, priceRange: 'medium', affiliate: 'https://example.com/beautify-lipstick' },
+      { brand: 'Bling by Nadia Hussain', shade: 'Berry Bold', price: 15, priceRange: 'medium', affiliate: 'https://example.com/bling-lipstick' },
+      { brand: 'Zay Beauty', shade: 'Matte Magic', price: 16, priceRange: 'medium', affiliate: 'https://example.com/zay-lipstick' },
+      { brand: 'J.', shade: 'Classic Red', price: 20, priceRange: 'medium', affiliate: 'https://example.com/j-lipstick' }
     ],
     blush: [
-      { brand: 'Medora', shade: 'Peachy Pink', price: 12, priceRange: 'low', affiliate: '#' },
-      { brand: 'Zay Beauty', shade: 'Rose Glow', price: 16, priceRange: 'medium', affiliate: '#' }
+      { brand: 'Medora', shade: 'Peachy Pink', price: 12, priceRange: 'low', affiliate: 'https://example.com/medora-blush' },
+      { brand: 'Zay Beauty', shade: 'Rose Glow', price: 16, priceRange: 'medium', affiliate: 'https://example.com/zay-blush' },
+      { brand: 'Beautify by Amna', shade: 'Coral Flush', price: 18, priceRange: 'medium', affiliate: 'https://example.com/beautify-blush' }
     ]
   },
-  india: [
-    { brand: 'Lakmé', shade: 'Shell', price: 15, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Sugar Cosmetics', shade: 'Fair Ivory', price: 18, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Mamaearth', shade: 'Fair Glow', price: 12, priceRange: 'low', affiliate: '#' },
-    { brand: 'Kay Beauty', shade: 'Porcelain', price: 28, priceRange: 'high', affiliate: '#' },
-    { brand: 'Blue Heaven', shade: 'Fair Pink', price: 8, priceRange: 'low', affiliate: '#' },
-    { brand: 'Faces Canada', shade: 'Ivory Fair', price: 16, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Plum', shade: 'Fair Rose', price: 22, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Just Herbs', shade: 'Fair Ayurvedic', price: 30, priceRange: 'high', affiliate: '#' },
-    { brand: 'MyGlamm', shade: 'Fair Perfection', price: 24, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Swiss Beauty', shade: 'Fair Matte', price: 10, priceRange: 'low', affiliate: '#' },
-    { brand: 'Insight Cosmetics', shade: 'Fair Silk', price: 14, priceRange: 'low', affiliate: '#' },
-    { brand: 'Pahadi Local', shade: 'Fair Himalayan', price: 20, priceRange: 'medium', affiliate: '#' }
-  ],
-  usa: [
-    { brand: 'Fenty Beauty', shade: '110', price: 38, priceRange: 'high', affiliate: '#' },
-    { brand: 'Rare Beauty', shade: 'Fair 10N', price: 25, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Tarte', shade: 'Fair Light Neutral', price: 36, priceRange: 'high', affiliate: '#' },
-    { brand: 'NARS', shade: 'Siberia', price: 38, priceRange: 'high', affiliate: '#' },
-    { brand: 'e.l.f.', shade: 'Fair 140 C', price: 6, priceRange: 'low', affiliate: '#' },
-    { brand: 'Morphe', shade: 'Fair 1', price: 18, priceRange: 'medium', affiliate: '#' },
-    { brand: 'MAC', shade: 'NW10', price: 33, priceRange: 'high', affiliate: '#' }
-  ],
-  uk: [
-    { brand: 'Charlotte Tilbury', shade: 'Fair 1', price: 44, priceRange: 'high', affiliate: '#' },
-    { brand: 'Revolution', shade: 'Fair F1', price: 8, priceRange: 'low', affiliate: '#' },
-    { brand: 'Bourjois', shade: 'Porcelain', price: 14, priceRange: 'medium', affiliate: '#' },
-    { brand: 'No7', shade: 'Fair Ivory', price: 16, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Sleek', shade: 'Fair Rose', price: 10, priceRange: 'low', affiliate: '#' }
-  ],
-  uae: [
-    { brand: 'Huda Beauty', shade: 'Milkshake', price: 40, priceRange: 'high', affiliate: '#' },
-    { brand: 'Mikyajy', shade: 'Fair Porcelain', price: 25, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Faces', shade: 'Ivory Cool', price: 18, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Yasmin Beauty', shade: 'Fair Rose', price: 22, priceRange: 'medium', affiliate: '#' }
-  ],
-  france: [
-    { brand: 'L\'Oréal Paris', shade: 'Ivory Rose', price: 15, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Lancôme', shade: 'Ivoire', price: 48, priceRange: 'high', affiliate: '#' },
-    { brand: 'Yves Saint Laurent', shade: 'B10', price: 52, priceRange: 'high', affiliate: '#' },
-    { brand: 'Bourjois', shade: 'Vanilla', price: 14, priceRange: 'medium', affiliate: '#' }
-  ],
-  indonesia: [
-    { brand: 'Wardah', shade: 'Light Beige', price: 12, priceRange: 'low', affiliate: '#' },
-    { brand: 'Emina', shade: 'Fair Natural', price: 10, priceRange: 'low', affiliate: '#' },
-    { brand: 'Sariayu', shade: 'Fair Ivory', price: 15, priceRange: 'medium', affiliate: '#' },
-    { brand: 'Cathy Doll', shade: 'Fair Pink', price: 8, priceRange: 'low', affiliate: '#' }
-  ]
+  india: {
+    foundation: [
+      { brand: 'Lakmé', shade: 'Shell', price: 15, priceRange: 'medium', affiliate: 'https://example.com/lakme-foundation' },
+      { brand: 'Sugar Cosmetics', shade: 'Fair Ivory', price: 18, priceRange: 'medium', affiliate: 'https://example.com/sugar-foundation' },
+      { brand: 'Mamaearth', shade: 'Fair Glow', price: 12, priceRange: 'low', affiliate: 'https://example.com/mamaearth-foundation' },
+      { brand: 'Kay Beauty', shade: 'Porcelain', price: 28, priceRange: 'high', affiliate: 'https://example.com/kay-foundation' },
+      { brand: 'Blue Heaven', shade: 'Fair Pink', price: 8, priceRange: 'low', affiliate: 'https://example.com/blue-heaven-foundation' },
+      { brand: 'Faces Canada', shade: 'Ivory Fair', price: 16, priceRange: 'medium', affiliate: 'https://example.com/faces-foundation' }
+    ],
+    concealer: [
+      { brand: 'Sugar Cosmetics', shade: 'Light Hide', price: 14, priceRange: 'low', affiliate: 'https://example.com/sugar-concealer' },
+      { brand: 'Lakmé', shade: 'Perfect Cover', price: 12, priceRange: 'low', affiliate: 'https://example.com/lakme-concealer' }
+    ],
+    highlighter: [
+      { brand: 'Sugar Cosmetics', shade: 'Golden Hour', price: 16, priceRange: 'medium', affiliate: 'https://example.com/sugar-highlighter' },
+      { brand: 'Kay Beauty', shade: 'Luminous', price: 24, priceRange: 'medium', affiliate: 'https://example.com/kay-highlighter' }
+    ],
+    lipstick: [
+      { brand: 'Sugar Cosmetics', shade: 'Berry Me', price: 14, priceRange: 'low', affiliate: 'https://example.com/sugar-lipstick' },
+      { brand: 'Lakmé', shade: 'Classic Rose', price: 12, priceRange: 'low', affiliate: 'https://example.com/lakme-lipstick' }
+    ],
+    blush: [
+      { brand: 'Sugar Cosmetics', shade: 'Peachy Keen', price: 12, priceRange: 'low', affiliate: 'https://example.com/sugar-blush' }
+    ]
+  },
+  usa: {
+    foundation: [
+      { brand: 'Fenty Beauty', shade: '110', price: 38, priceRange: 'high', affiliate: 'https://example.com/fenty-foundation' },
+      { brand: 'Rare Beauty', shade: 'Fair 10N', price: 25, priceRange: 'medium', affiliate: 'https://example.com/rare-foundation' },
+      { brand: 'Tarte', shade: 'Fair Light Neutral', price: 36, priceRange: 'high', affiliate: 'https://example.com/tarte-foundation' },
+      { brand: 'NARS', shade: 'Siberia', price: 38, priceRange: 'high', affiliate: 'https://example.com/nars-foundation' },
+      { brand: 'e.l.f.', shade: 'Fair 140 C', price: 6, priceRange: 'low', affiliate: 'https://example.com/elf-foundation' },
+      { brand: 'Morphe', shade: 'Fair 1', price: 18, priceRange: 'medium', affiliate: 'https://example.com/morphe-foundation' },
+      { brand: 'MAC', shade: 'NW10', price: 33, priceRange: 'high', affiliate: 'https://example.com/mac-foundation' }
+    ],
+    concealer: [
+      { brand: 'Tarte', shade: 'Fair Light', price: 28, priceRange: 'medium', affiliate: 'https://example.com/tarte-concealer' },
+      { brand: 'Rare Beauty', shade: 'Fair', price: 20, priceRange: 'medium', affiliate: 'https://example.com/rare-concealer' }
+    ],
+    highlighter: [
+      { brand: 'Fenty Beauty', shade: 'Lightning Dust', price: 38, priceRange: 'high', affiliate: 'https://example.com/fenty-highlighter' },
+      { brand: 'Rare Beauty', shade: 'Mesmerize', price: 22, priceRange: 'medium', affiliate: 'https://example.com/rare-highlighter' }
+    ],
+    lipstick: [
+      { brand: 'Fenty Beauty', shade: 'Stunna', price: 25, priceRange: 'medium', affiliate: 'https://example.com/fenty-lipstick' },
+      { brand: 'Rare Beauty', shade: 'Kind', price: 20, priceRange: 'medium', affiliate: 'https://example.com/rare-lipstick' }
+    ],
+    blush: [
+      { brand: 'Rare Beauty', shade: 'Soft Pinch', price: 23, priceRange: 'medium', affiliate: 'https://example.com/rare-blush' }
+    ]
+  },
+  uk: {
+    foundation: [
+      { brand: 'Charlotte Tilbury', shade: 'Fair 1', price: 44, priceRange: 'high', affiliate: 'https://example.com/charlotte-foundation' },
+      { brand: 'Revolution', shade: 'Fair F1', price: 8, priceRange: 'low', affiliate: 'https://example.com/revolution-foundation' },
+      { brand: 'Bourjois', shade: 'Porcelain', price: 14, priceRange: 'medium', affiliate: 'https://example.com/bourjois-foundation' },
+      { brand: 'No7', shade: 'Fair Ivory', price: 16, priceRange: 'medium', affiliate: 'https://example.com/no7-foundation' },
+      { brand: 'Sleek', shade: 'Fair Rose', price: 10, priceRange: 'low', affiliate: 'https://example.com/sleek-foundation' }
+    ],
+    concealer: [
+      { brand: 'Charlotte Tilbury', shade: 'Fair', price: 32, priceRange: 'high', affiliate: 'https://example.com/charlotte-concealer' },
+      { brand: 'Revolution', shade: 'Light', price: 6, priceRange: 'low', affiliate: 'https://example.com/revolution-concealer' }
+    ],
+    highlighter: [
+      { brand: 'Charlotte Tilbury', shade: 'Champagne', price: 38, priceRange: 'high', affiliate: 'https://example.com/charlotte-highlighter' }
+    ],
+    lipstick: [
+      { brand: 'Charlotte Tilbury', shade: 'Pillow Talk', price: 34, priceRange: 'high', affiliate: 'https://example.com/charlotte-lipstick' },
+      { brand: 'Revolution', shade: 'Rouge', price: 5, priceRange: 'low', affiliate: 'https://example.com/revolution-lipstick' }
+    ],
+    blush: [
+      { brand: 'Charlotte Tilbury', shade: 'Love Glow', price: 38, priceRange: 'high', affiliate: 'https://example.com/charlotte-blush' }
+    ]
+  },
+  uae: {
+    foundation: [
+      { brand: 'Huda Beauty', shade: 'Milkshake', price: 40, priceRange: 'high', affiliate: 'https://example.com/huda-foundation' },
+      { brand: 'Mikyajy', shade: 'Fair Porcelain', price: 25, priceRange: 'medium', affiliate: 'https://example.com/mikyajy-foundation' },
+      { brand: 'Faces', shade: 'Ivory Cool', price: 18, priceRange: 'medium', affiliate: 'https://example.com/faces-foundation' },
+      { brand: 'Yasmin Beauty', shade: 'Fair Rose', price: 22, priceRange: 'medium', affiliate: 'https://example.com/yasmin-foundation' }
+    ],
+    concealer: [
+      { brand: 'Huda Beauty', shade: 'Fair', price: 30, priceRange: 'high', affiliate: 'https://example.com/huda-concealer' }
+    ],
+    highlighter: [
+      { brand: 'Huda Beauty', shade: 'Winter Solstice', price: 38, priceRange: 'high', affiliate: 'https://example.com/huda-highlighter' }
+    ],
+    lipstick: [
+      { brand: 'Huda Beauty', shade: 'Trophy Wife', price: 20, priceRange: 'medium', affiliate: 'https://example.com/huda-lipstick' }
+    ],
+    blush: [
+      { brand: 'Huda Beauty', shade: 'Desert Rose', price: 32, priceRange: 'high', affiliate: 'https://example.com/huda-blush' }
+    ]
+  },
+  france: {
+    foundation: [
+      { brand: 'L\'Oréal Paris', shade: 'Ivory Rose', price: 15, priceRange: 'medium', affiliate: 'https://example.com/loreal-france-foundation' },
+      { brand: 'Lancôme', shade: 'Ivoire', price: 48, priceRange: 'high', affiliate: 'https://example.com/lancome-foundation' },
+      { brand: 'Yves Saint Laurent', shade: 'B10', price: 52, priceRange: 'high', affiliate: 'https://example.com/ysl-foundation' },
+      { brand: 'Bourjois', shade: 'Vanilla', price: 14, priceRange: 'medium', affiliate: 'https://example.com/bourjois-france-foundation' }
+    ],
+    concealer: [
+      { brand: 'Lancôme', shade: 'Ivoire', price: 32, priceRange: 'high', affiliate: 'https://example.com/lancome-concealer' }
+    ],
+    highlighter: [
+      { brand: 'YSL', shade: 'Or Gold', price: 45, priceRange: 'high', affiliate: 'https://example.com/ysl-highlighter' }
+    ],
+    lipstick: [
+      { brand: 'YSL', shade: 'Rouge Pur', price: 38, priceRange: 'high', affiliate: 'https://example.com/ysl-lipstick' },
+      { brand: 'L\'Oréal Paris', shade: 'Rouge Signature', price: 12, priceRange: 'low', affiliate: 'https://example.com/loreal-lipstick' }
+    ],
+    blush: [
+      { brand: 'Lancôme', shade: 'Rose Fresque', price: 40, priceRange: 'high', affiliate: 'https://example.com/lancome-blush' }
+    ]
+  },
+  indonesia: {
+    foundation: [
+      { brand: 'Wardah', shade: 'Light Beige', price: 12, priceRange: 'low', affiliate: 'https://example.com/wardah-foundation' },
+      { brand: 'Emina', shade: 'Fair Natural', price: 10, priceRange: 'low', affiliate: 'https://example.com/emina-foundation' },
+      { brand: 'Sariayu', shade: 'Fair Ivory', price: 15, priceRange: 'medium', affiliate: 'https://example.com/sariayu-foundation' },
+      { brand: 'Cathy Doll', shade: 'Fair Pink', price: 8, priceRange: 'low', affiliate: 'https://example.com/cathy-foundation' }
+    ],
+    concealer: [
+      { brand: 'Wardah', shade: 'Light', price: 8, priceRange: 'low', affiliate: 'https://example.com/wardah-concealer' }
+    ],
+    highlighter: [
+      { brand: 'Emina', shade: 'Glow Up', price: 12, priceRange: 'low', affiliate: 'https://example.com/emina-highlighter' }
+    ],
+    lipstick: [
+      { brand: 'Wardah', shade: 'Pink Berry', price: 10, priceRange: 'low', affiliate: 'https://example.com/wardah-lipstick' },
+      { brand: 'Sariayu', shade: 'Classic Red', price: 12, priceRange: 'low', affiliate: 'https://example.com/sariayu-lipstick' }
+    ],
+    blush: [
+      { brand: 'Emina', shade: 'Peachy', price: 8, priceRange: 'low', affiliate: 'https://example.com/emina-blush' }
+    ]
+  },
+  global: {
+    foundation: [
+      { brand: 'Maybelline', shade: 'Fair Ivory', price: 12, priceRange: 'low', affiliate: 'https://example.com/maybelline-global-foundation' },
+      { brand: 'L\'Oréal', shade: 'Ivory', price: 15, priceRange: 'medium', affiliate: 'https://example.com/loreal-global-foundation' },
+      { brand: 'Revlon', shade: 'Buff', price: 10, priceRange: 'low', affiliate: 'https://example.com/revlon-foundation' },
+      { brand: 'CoverGirl', shade: 'Fair', price: 8, priceRange: 'low', affiliate: 'https://example.com/covergirl-foundation' }
+    ],
+    concealer: [
+      { brand: 'Maybelline', shade: 'Fair', price: 8, priceRange: 'low', affiliate: 'https://example.com/maybelline-concealer' }
+    ],
+    highlighter: [
+      { brand: 'L\'Oréal', shade: 'Golden Hour', price: 14, priceRange: 'low', affiliate: 'https://example.com/loreal-highlighter' }
+    ],
+    lipstick: [
+      { brand: 'Maybelline', shade: 'Red Revival', price: 9, priceRange: 'low', affiliate: 'https://example.com/maybelline-lipstick' },
+      { brand: 'Revlon', shade: 'Pink In The Afternoon', price: 10, priceRange: 'low', affiliate: 'https://example.com/revlon-lipstick' }
+    ],
+    blush: [
+      { brand: 'Maybelline', shade: 'Pink Amber', price: 7, priceRange: 'low', affiliate: 'https://example.com/maybelline-blush' }
+    ]
+  }
 };
 
 // Generate comprehensive product database
@@ -221,22 +336,41 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
       return;
     }
 
+    console.log('Starting recommendation with:', { skinTone, undertone, region, productType, budget, selectedBrand });
+
     let products = [];
-    const regionData = productDatabase[skinTone]?.[undertone]?.[region];
+    
+    // Get products from regional brands database
+    const regionData = (regionalBrands as any)[region];
+    console.log('Region data:', regionData);
     
     if (regionData && regionData[productType]) {
-      products = regionData[productType];
+      products = [...regionData[productType]];
+      console.log('Found products for', productType, ':', products);
+    } else {
+      console.log('No products found for', productType, 'in', region);
+      // If no products for specific type, show foundation as fallback
+      if (regionData && regionData.foundation) {
+        products = [...regionData.foundation];
+        console.log('Using foundation as fallback:', products);
+      }
     }
     
     // Filter by budget if selected
     if (budget && products.length > 0) {
+      const originalLength = products.length;
       products = products.filter(product => product.priceRange === budget);
+      console.log(`Budget filter: ${originalLength} -> ${products.length} products`);
     }
     
     // Filter by brand if selected
     if (selectedBrand && selectedBrand !== 'any' && products.length > 0) {
+      const originalLength = products.length;
       products = products.filter(product => product.brand === selectedBrand);
+      console.log(`Brand filter: ${originalLength} -> ${products.length} products`);
     }
+
+    console.log('Final products:', products);
 
     setResults({
       skinTone,
@@ -264,15 +398,19 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-beauty-gradient-soft via-beauty-gradient-glow to-beauty-gradient-coral p-4 relative overflow-hidden">
-      {/* Enhanced floating makeup elements */}
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-purple-200 p-4 relative overflow-hidden">
+      {/* Enhanced floating makeup elements with bigger animations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-6 h-6 text-beauty-pink animate-pulse">💄</div>
-        <div className="absolute top-1/4 right-20 w-8 h-8 text-beauty-coral animate-bounce">✨</div>
-        <div className="absolute bottom-20 left-1/4 w-6 h-6 text-beauty-gold animate-pulse">💋</div>
-        <div className="absolute bottom-1/4 right-10 w-8 h-8 text-beauty-rose-gold animate-bounce">🌸</div>
-        <div className="absolute top-1/2 left-1/2 w-4 h-4 text-beauty-lavender animate-pulse">👑</div>
-        <div className="absolute top-20 right-1/3 w-6 h-6 text-beauty-warm animate-bounce">💍</div>
+        <div className="absolute top-10 left-10 text-6xl text-purple-500 animate-pulse transform hover:scale-125 transition-transform duration-300">💄</div>
+        <div className="absolute top-1/4 right-20 text-7xl text-pink-500 animate-bounce transform hover:rotate-12 transition-transform duration-300">✨</div>
+        <div className="absolute bottom-20 left-1/4 text-6xl text-purple-600 animate-pulse transform hover:scale-125 transition-transform duration-300">💋</div>
+        <div className="absolute bottom-1/4 right-10 text-7xl text-pink-400 animate-bounce transform hover:rotate-12 transition-transform duration-300">🌸</div>
+        <div className="absolute top-1/2 left-1/2 text-5xl text-purple-400 animate-pulse transform hover:scale-125 transition-transform duration-300">👑</div>
+        <div className="absolute top-20 right-1/3 text-6xl text-pink-600 animate-bounce transform hover:rotate-12 transition-transform duration-300">💍</div>
+        <div className="absolute top-40 left-20 text-5xl text-purple-300 animate-pulse transform hover:scale-125 transition-transform duration-300">💎</div>
+        <div className="absolute bottom-40 right-1/4 text-6xl text-pink-300 animate-bounce transform hover:rotate-12 transition-transform duration-300">🦋</div>
+        <div className="absolute top-3/4 left-10 text-5xl text-purple-500 animate-pulse transform hover:scale-125 transition-transform duration-300">🌺</div>
+        <div className="absolute top-60 right-10 text-6xl text-pink-500 animate-bounce transform hover:rotate-12 transition-transform duration-300">🎀</div>
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -283,16 +421,16 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
           />
           <div className="mb-6">
             <Wand2 className="mx-auto mb-4 w-12 h-12 text-beauty-primary animate-pulse" />
-            <h1 className="text-6xl font-bold bg-gradient-to-r from-beauty-primary via-beauty-secondary to-beauty-warm bg-clip-text text-transparent mb-4">
+            <h1 className="text-6xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-purple-800 bg-clip-text text-transparent mb-4">
               {t.appTitle}
             </h1>
             <p className="text-lg text-gray-700 font-medium">{t.appDescription}</p>
           </div>
-          <div className="w-32 h-1 bg-gradient-to-r from-beauty-primary to-beauty-secondary mx-auto rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
         </div>
 
         <Card className="backdrop-blur-lg bg-white/95 border-0 shadow-beauty-card rounded-3xl overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-beauty-gradient-soft to-beauty-gradient-glow p-8">
+          <CardHeader className="bg-gradient-to-r from-purple-500 to-pink-500 p-8">
             <div className="text-center">
               <Heart className="mx-auto mb-3 w-8 h-8 text-white" />
               <CardTitle className="text-3xl text-white font-bold">Find Your Perfect Beauty Match</CardTitle>
@@ -488,7 +626,7 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
             <div className="text-center">
               <Button 
                 onClick={handleAutoRecommend}
-                className="h-14 px-12 text-lg font-semibold bg-gradient-to-r from-beauty-primary to-beauty-secondary hover:from-beauty-secondary hover:to-beauty-primary text-white rounded-2xl shadow-beauty-soft transform hover:scale-105 transition-all duration-300"
+                className="h-14 px-12 text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 text-white rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300"
                 disabled={!skinTone || !undertone || !region}
               >
                 <Zap className="mr-2 w-5 h-5" />
@@ -501,7 +639,7 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
         {/* Results Section */}
         {results && (
           <Card className="mt-8 backdrop-blur-lg bg-white/95 border-0 shadow-beauty-card rounded-3xl overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-beauty-secondary to-beauty-warm p-8">
+            <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 p-8">
               <div className="text-center">
                 <Sparkles className="mx-auto mb-3 w-8 h-8 text-white" />
                 <CardTitle className="text-3xl text-white font-bold">
@@ -517,19 +655,19 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
               {results.products.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {results.products.map((product, index) => (
-                    <Card key={index} className="border-2 border-beauty-primary/20 rounded-2xl overflow-hidden hover:shadow-beauty-soft transition-all duration-300 hover:scale-105">
+                    <Card key={index} className="border-2 border-purple-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm">
                       <CardContent className="p-6">
                         <div className="space-y-4">
                           <div className="flex items-start justify-between">
                             <div>
                               <h3 className="font-bold text-lg text-gray-800">{product.brand}</h3>
-                              <p className="text-beauty-primary font-medium">{product.shade}</p>
+                              <p className="text-purple-600 font-medium">{product.shade}</p>
                             </div>
                             <PriceRangeBadge range={product.priceRange} />
                           </div>
                           
                           <div className="flex items-center justify-between">
-                            <div className="text-2xl font-bold text-beauty-secondary">
+                            <div className="text-2xl font-bold text-pink-600">
                               ${product.price}
                             </div>
                             <div className="flex items-center gap-1 text-yellow-500">
@@ -542,7 +680,7 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
                           </div>
                           
                           <Button 
-                            className="w-full bg-gradient-to-r from-beauty-primary to-beauty-secondary hover:from-beauty-secondary hover:to-beauty-primary text-white rounded-xl font-semibold"
+                            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300"
                             onClick={() => window.open(product.affiliate, '_blank')}
                           >
                             <ShoppingBag className="mr-2 w-4 h-4" />
@@ -564,7 +702,7 @@ const MakeupShadeFinder: React.FC<MakeupShadeFinderProps> = ({ language = 'en' }
                 <Button 
                   variant="outline" 
                   onClick={() => setResults(null)}
-                  className="border-beauty-primary text-beauty-primary hover:bg-beauty-primary hover:text-white rounded-xl"
+                  className="border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white rounded-xl"
                 >
                   {t.findNewShades}
                 </Button>
