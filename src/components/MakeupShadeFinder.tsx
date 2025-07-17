@@ -17,29 +17,29 @@ import LanguageSelector from './LanguageSelector';
 const regionalBrands = {
   pakistan: {
     foundation: [
-      { brand: 'Masarrat Misbah', shade: 'Fair Porcelain', price: 35, priceRange: 'high', affiliate: 'https://example.com/masarrat-misbah-foundation' },
-      { brand: 'Luscious Cosmetics', shade: 'Natural Fair', price: 12, priceRange: 'low', affiliate: 'https://example.com/luscious-foundation' },
-      { brand: 'Miss Rose', shade: 'Ivory Glow', price: 8, priceRange: 'low', affiliate: 'https://example.com/miss-rose-foundation' },
-      { brand: 'Rivaj UK', shade: 'Cool Fair', price: 10, priceRange: 'low', affiliate: 'https://example.com/rivaj-foundation' },
-      { brand: 'Beautify by Amna', shade: 'Fair Blush', price: 22, priceRange: 'medium', affiliate: 'https://example.com/beautify-foundation' },
-      { brand: 'Bling by Nadia Hussain', shade: 'Radiant Fair', price: 18, priceRange: 'medium', affiliate: 'https://example.com/bling-foundation' },
-      { brand: 'J.', shade: 'Porcelain Perfect', price: 25, priceRange: 'medium', affiliate: 'https://example.com/j-foundation' },
-      { brand: 'Zay Beauty', shade: 'Cool Ivory', price: 28, priceRange: 'medium', affiliate: 'https://example.com/zay-foundation' },
-      { brand: 'Medora', shade: 'Porcelain Pink', price: 14, priceRange: 'low', affiliate: 'https://example.com/medora-foundation' },
-      { brand: 'Alezem Beauty', shade: 'Fair Silk', price: 20, priceRange: 'medium', affiliate: 'https://example.com/alezem-foundation' },
-      { brand: 'Kryolan', shade: 'Ultra Fair', price: 45, priceRange: 'high', affiliate: 'https://example.com/kryolan-foundation' },
-      { brand: 'Maybelline', shade: 'Ivory Classic', price: 12, priceRange: 'low', affiliate: 'https://example.com/maybelline-foundation' },
-      { brand: 'Entice Cosmetics', shade: 'Fair Natural', price: 16, priceRange: 'medium', affiliate: 'https://example.com/entice-foundation' },
-      { brand: 'Essence', shade: 'Fair Ivory', price: 5, priceRange: 'low', affiliate: 'https://example.com/essence-foundation' },
-      { brand: 'L\'Oréal', shade: 'Ivory Rose', price: 15, priceRange: 'medium', affiliate: 'https://example.com/loreal-foundation' },
-      { brand: 'Sapphire', shade: 'Fair Elegance', price: 30, priceRange: 'high', affiliate: 'https://example.com/sapphire-foundation' }
+      { brand: 'Masarrat Misbah', shade: 'Fair Porcelain', price: 35, priceRange: 'high', affiliate: 'https://masarratmisbah.com/products/foundation' },
+      { brand: 'Luscious Cosmetics', shade: 'Natural Fair', price: 12, priceRange: 'low', affiliate: 'https://lusciouscosmetics.com/collections/face/products/foundation' },
+      { brand: 'Miss Rose', shade: 'Ivory Glow', price: 8, priceRange: 'low', affiliate: 'https://amazon.com/miss-rose-foundation/dp/B08X1234' },
+      { brand: 'Rivaj UK', shade: 'Cool Fair', price: 10, priceRange: 'low', affiliate: 'https://rivajuk.com/products/hd-foundation' },
+      { brand: 'Beautify by Amna', shade: 'Fair Blush', price: 22, priceRange: 'medium', affiliate: 'https://beautifybyamna.com/products/liquid-foundation' },
+      { brand: 'Bling by Nadia Hussain', shade: 'Radiant Fair', price: 18, priceRange: 'medium', affiliate: 'https://blingbynadiahussain.com/collections/face/products/foundation' },
+      { brand: 'J.', shade: 'Porcelain Perfect', price: 25, priceRange: 'medium', affiliate: 'https://jdot.com.pk/collections/foundation' },
+      { brand: 'Zay Beauty', shade: 'Cool Ivory', price: 28, priceRange: 'medium', affiliate: 'https://zaybeauty.com/products/matte-foundation' },
+      { brand: 'Medora', shade: 'Porcelain Pink', price: 14, priceRange: 'low', affiliate: 'https://medoracosmetics.com/products/liquid-foundation' },
+      { brand: 'Alezem Beauty', shade: 'Fair Silk', price: 20, priceRange: 'medium', affiliate: 'https://alezembeauty.com/products/hd-foundation' },
+      { brand: 'Kryolan', shade: 'Ultra Fair', price: 45, priceRange: 'high', affiliate: 'https://kryolan.com/products/ultrafoundation' },
+      { brand: 'Maybelline', shade: 'Ivory Classic', price: 12, priceRange: 'low', affiliate: 'https://maybelline.com/products/face-makeup/foundation/fit-me-matte-poreless-foundation' },
+      { brand: 'Entice Cosmetics', shade: 'Fair Natural', price: 16, priceRange: 'medium', affiliate: 'https://enticecosmetics.com/products/liquid-foundation' },
+      { brand: 'Essence', shade: 'Fair Ivory', price: 5, priceRange: 'low', affiliate: 'https://essence.eu/products/stay-all-day-16h-long-lasting-make-up' },
+      { brand: 'L\'Oréal', shade: 'Ivory Rose', price: 15, priceRange: 'medium', affiliate: 'https://loreal-paris.com/products/makeup/face/foundation/infallible-up-to-24hr-fresh-wear-foundation' },
+      { brand: 'Sapphire', shade: 'Fair Elegance', price: 30, priceRange: 'high', affiliate: 'https://sapphirepk.com/collections/makeup/products/liquid-foundation' }
     ],
     concealer: [
-      { brand: 'Masarrat Misbah', shade: 'Fair Coverage', price: 25, priceRange: 'medium', affiliate: 'https://example.com/masarrat-concealer' },
-      { brand: 'Luscious Cosmetics', shade: 'Light Concealer', price: 8, priceRange: 'low', affiliate: 'https://example.com/luscious-concealer' },
-      { brand: 'Beautify by Amna', shade: 'Perfect Cover', price: 15, priceRange: 'medium', affiliate: 'https://example.com/beautify-concealer' },
-      { brand: 'Zay Beauty', shade: 'Flawless Hide', price: 20, priceRange: 'medium', affiliate: 'https://example.com/zay-concealer' },
-      { brand: 'Maybelline', shade: 'Fit Me', price: 10, priceRange: 'low', affiliate: 'https://example.com/maybelline-concealer' }
+      { brand: 'Masarrat Misbah', shade: 'Fair Coverage', price: 25, priceRange: 'medium', affiliate: 'https://masarratmisbah.com/products/concealer' },
+      { brand: 'Luscious Cosmetics', shade: 'Light Concealer', price: 8, priceRange: 'low', affiliate: 'https://lusciouscosmetics.com/collections/face/products/concealer' },
+      { brand: 'Beautify by Amna', shade: 'Perfect Cover', price: 15, priceRange: 'medium', affiliate: 'https://beautifybyamna.com/products/concealer' },
+      { brand: 'Zay Beauty', shade: 'Flawless Hide', price: 20, priceRange: 'medium', affiliate: 'https://zaybeauty.com/products/concealer' },
+      { brand: 'Maybelline', shade: 'Fit Me', price: 10, priceRange: 'low', affiliate: 'https://maybelline.com/products/face-makeup/concealer/fit-me-concealer' }
     ],
     highlighter: [
       { brand: 'Zay Beauty', shade: 'Golden Glow', price: 20, priceRange: 'medium', affiliate: 'https://example.com/zay-highlighter' },
@@ -48,11 +48,11 @@ const regionalBrands = {
       { brand: 'Beautify by Amna', shade: 'Rose Gold', price: 22, priceRange: 'medium', affiliate: 'https://example.com/beautify-highlighter' }
     ],
     lipstick: [
-      { brand: 'Luscious Cosmetics', shade: 'Rose Pink', price: 10, priceRange: 'low', affiliate: 'https://example.com/luscious-lipstick' },
-      { brand: 'Beautify by Amna', shade: 'Coral Bliss', price: 18, priceRange: 'medium', affiliate: 'https://example.com/beautify-lipstick' },
-      { brand: 'Bling by Nadia Hussain', shade: 'Berry Bold', price: 15, priceRange: 'medium', affiliate: 'https://example.com/bling-lipstick' },
-      { brand: 'Zay Beauty', shade: 'Matte Magic', price: 16, priceRange: 'medium', affiliate: 'https://example.com/zay-lipstick' },
-      { brand: 'J.', shade: 'Classic Red', price: 20, priceRange: 'medium', affiliate: 'https://example.com/j-lipstick' }
+      { brand: 'Luscious Cosmetics', shade: 'Rose Pink', price: 10, priceRange: 'low', affiliate: 'https://lusciouscosmetics.com/collections/lips/products/matte-lipstick' },
+      { brand: 'Beautify by Amna', shade: 'Coral Bliss', price: 18, priceRange: 'medium', affiliate: 'https://beautifybyamna.com/products/lipstick' },
+      { brand: 'Bling by Nadia Hussain', shade: 'Berry Bold', price: 15, priceRange: 'medium', affiliate: 'https://blingbynadiahussain.com/collections/lips/products/lipstick' },
+      { brand: 'Zay Beauty', shade: 'Matte Magic', price: 16, priceRange: 'medium', affiliate: 'https://zaybeauty.com/products/liquid-lipstick' },
+      { brand: 'J.', shade: 'Classic Red', price: 20, priceRange: 'medium', affiliate: 'https://jdot.com.pk/collections/lipstick' }
     ],
     blush: [
       { brand: 'Medora', shade: 'Peachy Pink', price: 12, priceRange: 'low', affiliate: 'https://example.com/medora-blush' },
@@ -62,53 +62,53 @@ const regionalBrands = {
   },
   india: {
     foundation: [
-      { brand: 'Lakmé', shade: 'Shell', price: 15, priceRange: 'medium', affiliate: 'https://example.com/lakme-foundation' },
-      { brand: 'Sugar Cosmetics', shade: 'Fair Ivory', price: 18, priceRange: 'medium', affiliate: 'https://example.com/sugar-foundation' },
-      { brand: 'Mamaearth', shade: 'Fair Glow', price: 12, priceRange: 'low', affiliate: 'https://example.com/mamaearth-foundation' },
-      { brand: 'Kay Beauty', shade: 'Porcelain', price: 28, priceRange: 'high', affiliate: 'https://example.com/kay-foundation' },
-      { brand: 'Blue Heaven', shade: 'Fair Pink', price: 8, priceRange: 'low', affiliate: 'https://example.com/blue-heaven-foundation' },
-      { brand: 'Faces Canada', shade: 'Ivory Fair', price: 16, priceRange: 'medium', affiliate: 'https://example.com/faces-foundation' }
+      { brand: 'Lakmé', shade: 'Shell', price: 15, priceRange: 'medium', affiliate: 'https://lakme-india.com/products/9-to-5-primer-matte-liquid-foundation' },
+      { brand: 'Sugar Cosmetics', shade: 'Fair Ivory', price: 18, priceRange: 'medium', affiliate: 'https://sugarcosmetics.com/products/dream-cover-spf15-mattifying-compact' },
+      { brand: 'Mamaearth', shade: 'Fair Glow', price: 12, priceRange: 'low', affiliate: 'https://mamaearth.in/product/glow-serum-foundation-with-vitamin-c-turmeric' },
+      { brand: 'Kay Beauty', shade: 'Porcelain', price: 28, priceRange: 'high', affiliate: 'https://kaybeauty.in/products/hd-foundation' },
+      { brand: 'Blue Heaven', shade: 'Fair Pink', price: 8, priceRange: 'low', affiliate: 'https://blueheaven-india.com/products/one-tone-foundation' },
+      { brand: 'Faces Canada', shade: 'Ivory Fair', price: 16, priceRange: 'medium', affiliate: 'https://facescanada.com/products/ultime-pro-hd-studio-foundation' }
     ],
     concealer: [
-      { brand: 'Sugar Cosmetics', shade: 'Light Hide', price: 14, priceRange: 'low', affiliate: 'https://example.com/sugar-concealer' },
-      { brand: 'Lakmé', shade: 'Perfect Cover', price: 12, priceRange: 'low', affiliate: 'https://example.com/lakme-concealer' }
+      { brand: 'Sugar Cosmetics', shade: 'Light Hide', price: 14, priceRange: 'low', affiliate: 'https://sugarcosmetics.com/products/ace-of-face-foundation-stick' },
+      { brand: 'Lakmé', shade: 'Perfect Cover', price: 12, priceRange: 'low', affiliate: 'https://lakme-india.com/products/perfecting-liquid-foundation' }
     ],
     highlighter: [
-      { brand: 'Sugar Cosmetics', shade: 'Golden Hour', price: 16, priceRange: 'medium', affiliate: 'https://example.com/sugar-highlighter' },
-      { brand: 'Kay Beauty', shade: 'Luminous', price: 24, priceRange: 'medium', affiliate: 'https://example.com/kay-highlighter' }
+      { brand: 'Sugar Cosmetics', shade: 'Golden Hour', price: 16, priceRange: 'medium', affiliate: 'https://sugarcosmetics.com/products/strobing-kit' },
+      { brand: 'Kay Beauty', shade: 'Luminous', price: 24, priceRange: 'medium', affiliate: 'https://kaybeauty.in/products/highlighter' }
     ],
     lipstick: [
-      { brand: 'Sugar Cosmetics', shade: 'Berry Me', price: 14, priceRange: 'low', affiliate: 'https://example.com/sugar-lipstick' },
-      { brand: 'Lakmé', shade: 'Classic Rose', price: 12, priceRange: 'low', affiliate: 'https://example.com/lakme-lipstick' }
+      { brand: 'Sugar Cosmetics', shade: 'Berry Me', price: 14, priceRange: 'low', affiliate: 'https://sugarcosmetics.com/products/matte-as-hell-crayon-lipstick' },
+      { brand: 'Lakmé', shade: 'Classic Rose', price: 12, priceRange: 'low', affiliate: 'https://lakme-india.com/products/9-to-5-primer-matte-lip-color' }
     ],
     blush: [
-      { brand: 'Sugar Cosmetics', shade: 'Peachy Keen', price: 12, priceRange: 'low', affiliate: 'https://example.com/sugar-blush' }
+      { brand: 'Sugar Cosmetics', shade: 'Peachy Keen', price: 12, priceRange: 'low', affiliate: 'https://sugarcosmetics.com/products/contour-de-force-face-palette' }
     ]
   },
   usa: {
     foundation: [
-      { brand: 'Fenty Beauty', shade: '110', price: 38, priceRange: 'high', affiliate: 'https://example.com/fenty-foundation' },
-      { brand: 'Rare Beauty', shade: 'Fair 10N', price: 25, priceRange: 'medium', affiliate: 'https://example.com/rare-foundation' },
-      { brand: 'Tarte', shade: 'Fair Light Neutral', price: 36, priceRange: 'high', affiliate: 'https://example.com/tarte-foundation' },
-      { brand: 'NARS', shade: 'Siberia', price: 38, priceRange: 'high', affiliate: 'https://example.com/nars-foundation' },
-      { brand: 'e.l.f.', shade: 'Fair 140 C', price: 6, priceRange: 'low', affiliate: 'https://example.com/elf-foundation' },
-      { brand: 'Morphe', shade: 'Fair 1', price: 18, priceRange: 'medium', affiliate: 'https://example.com/morphe-foundation' },
-      { brand: 'MAC', shade: 'NW10', price: 33, priceRange: 'high', affiliate: 'https://example.com/mac-foundation' }
+      { brand: 'Fenty Beauty', shade: '110', price: 38, priceRange: 'high', affiliate: 'https://fentybeauty.com/products/pro-filtr-soft-matte-longwear-foundation' },
+      { brand: 'Rare Beauty', shade: 'Fair 10N', price: 25, priceRange: 'medium', affiliate: 'https://rarebeauty.com/products/liquid-touch-weightless-foundation' },
+      { brand: 'Tarte', shade: 'Fair Light Neutral', price: 36, priceRange: 'high', affiliate: 'https://tartecosmetics.com/shop/amazonian-clay-full-coverage-foundation' },
+      { brand: 'NARS', shade: 'Siberia', price: 38, priceRange: 'high', affiliate: 'https://narscosmetics.com/usa/natural-radiant-longwear-foundation' },
+      { brand: 'e.l.f.', shade: 'Fair 140 C', price: 6, priceRange: 'low', affiliate: 'https://elfcosmetics.com/flawless-finish-foundation/300033.html' },
+      { brand: 'Morphe', shade: 'Fair 1', price: 18, priceRange: 'medium', affiliate: 'https://morphe.com/products/fluidity-full-coverage-foundation' },
+      { brand: 'MAC', shade: 'NW10', price: 33, priceRange: 'high', affiliate: 'https://maccosmetics.com/product/13847/310/products/makeup/face/foundation/studio-fix-fluid-spf-15' }
     ],
     concealer: [
-      { brand: 'Tarte', shade: 'Fair Light', price: 28, priceRange: 'medium', affiliate: 'https://example.com/tarte-concealer' },
-      { brand: 'Rare Beauty', shade: 'Fair', price: 20, priceRange: 'medium', affiliate: 'https://example.com/rare-concealer' }
+      { brand: 'Tarte', shade: 'Fair Light', price: 28, priceRange: 'medium', affiliate: 'https://tartecosmetics.com/shop/shape-tape-contour-concealer' },
+      { brand: 'Rare Beauty', shade: 'Fair', price: 20, priceRange: 'medium', affiliate: 'https://rarebeauty.com/products/liquid-touch-weightless-concealer' }
     ],
     highlighter: [
-      { brand: 'Fenty Beauty', shade: 'Lightning Dust', price: 38, priceRange: 'high', affiliate: 'https://example.com/fenty-highlighter' },
-      { brand: 'Rare Beauty', shade: 'Mesmerize', price: 22, priceRange: 'medium', affiliate: 'https://example.com/rare-highlighter' }
+      { brand: 'Fenty Beauty', shade: 'Lightning Dust', price: 38, priceRange: 'high', affiliate: 'https://fentybeauty.com/products/killawatt-freestyle-highlighter' },
+      { brand: 'Rare Beauty', shade: 'Mesmerize', price: 22, priceRange: 'medium', affiliate: 'https://rarebeauty.com/products/positive-light-liquid-luminizer-highlight' }
     ],
     lipstick: [
-      { brand: 'Fenty Beauty', shade: 'Stunna', price: 25, priceRange: 'medium', affiliate: 'https://example.com/fenty-lipstick' },
-      { brand: 'Rare Beauty', shade: 'Kind', price: 20, priceRange: 'medium', affiliate: 'https://example.com/rare-lipstick' }
+      { brand: 'Fenty Beauty', shade: 'Stunna', price: 25, priceRange: 'medium', affiliate: 'https://fentybeauty.com/products/stunna-lip-paint-longwear-fluid-lip-color' },
+      { brand: 'Rare Beauty', shade: 'Kind', price: 20, priceRange: 'medium', affiliate: 'https://rarebeauty.com/products/kind-words-matte-lipstick' }
     ],
     blush: [
-      { brand: 'Rare Beauty', shade: 'Soft Pinch', price: 23, priceRange: 'medium', affiliate: 'https://example.com/rare-blush' }
+      { brand: 'Rare Beauty', shade: 'Soft Pinch', price: 23, priceRange: 'medium', affiliate: 'https://rarebeauty.com/products/soft-pinch-liquid-blush' }
     ]
   },
   uk: {
