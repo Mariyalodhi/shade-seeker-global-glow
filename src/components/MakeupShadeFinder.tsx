@@ -42,10 +42,10 @@ const regionalBrands = {
       { brand: 'Maybelline', shade: 'Fit Me', price: 10, priceRange: 'low', affiliate: 'https://maybelline.com/products/face-makeup/concealer/fit-me-concealer' }
     ],
     highlighter: [
-      { brand: 'Zay Beauty', shade: 'Golden Glow', price: 20, priceRange: 'medium', affiliate: 'https://example.com/zay-highlighter' },
-      { brand: 'J.', shade: 'Pearl Highlight', price: 18, priceRange: 'medium', affiliate: 'https://example.com/j-highlighter' },
-      { brand: 'Masarrat Misbah', shade: 'Champagne Glow', price: 30, priceRange: 'high', affiliate: 'https://example.com/masarrat-highlighter' },
-      { brand: 'Beautify by Amna', shade: 'Rose Gold', price: 22, priceRange: 'medium', affiliate: 'https://example.com/beautify-highlighter' }
+      { brand: 'Zay Beauty', shade: 'Golden Glow', price: 20, priceRange: 'medium', affiliate: 'https://zaybeauty.com/products/highlighter' },
+      { brand: 'J.', shade: 'Pearl Highlight', price: 18, priceRange: 'medium', affiliate: 'https://jdot.com.pk/collections/highlighter' },
+      { brand: 'Masarrat Misbah', shade: 'Champagne Glow', price: 30, priceRange: 'high', affiliate: 'https://masarratmisbah.com/products/highlighter' },
+      { brand: 'Beautify by Amna', shade: 'Rose Gold', price: 22, priceRange: 'medium', affiliate: 'https://beautifybyamna.com/products/highlighter' }
     ],
     lipstick: [
       { brand: 'Luscious Cosmetics', shade: 'Rose Pink', price: 10, priceRange: 'low', affiliate: 'https://lusciouscosmetics.com/collections/lips/products/matte-lipstick' },
@@ -55,9 +55,9 @@ const regionalBrands = {
       { brand: 'J.', shade: 'Classic Red', price: 20, priceRange: 'medium', affiliate: 'https://jdot.com.pk/collections/lipstick' }
     ],
     blush: [
-      { brand: 'Medora', shade: 'Peachy Pink', price: 12, priceRange: 'low', affiliate: 'https://example.com/medora-blush' },
-      { brand: 'Zay Beauty', shade: 'Rose Glow', price: 16, priceRange: 'medium', affiliate: 'https://example.com/zay-blush' },
-      { brand: 'Beautify by Amna', shade: 'Coral Flush', price: 18, priceRange: 'medium', affiliate: 'https://example.com/beautify-blush' }
+      { brand: 'Medora', shade: 'Peachy Pink', price: 12, priceRange: 'low', affiliate: 'https://medoracosmetics.com/products/blush' },
+      { brand: 'Zay Beauty', shade: 'Rose Glow', price: 16, priceRange: 'medium', affiliate: 'https://zaybeauty.com/products/blush' },
+      { brand: 'Beautify by Amna', shade: 'Coral Flush', price: 18, priceRange: 'medium', affiliate: 'https://beautifybyamna.com/products/blush' }
     ]
   },
   india: {
@@ -113,108 +113,108 @@ const regionalBrands = {
   },
   uk: {
     foundation: [
-      { brand: 'Charlotte Tilbury', shade: 'Fair 1', price: 44, priceRange: 'high', affiliate: 'https://example.com/charlotte-foundation' },
-      { brand: 'Revolution', shade: 'Fair F1', price: 8, priceRange: 'low', affiliate: 'https://example.com/revolution-foundation' },
-      { brand: 'Bourjois', shade: 'Porcelain', price: 14, priceRange: 'medium', affiliate: 'https://example.com/bourjois-foundation' },
-      { brand: 'No7', shade: 'Fair Ivory', price: 16, priceRange: 'medium', affiliate: 'https://example.com/no7-foundation' },
-      { brand: 'Sleek', shade: 'Fair Rose', price: 10, priceRange: 'low', affiliate: 'https://example.com/sleek-foundation' }
+      { brand: 'Charlotte Tilbury', shade: 'Fair 1', price: 44, priceRange: 'high', affiliate: 'https://charlottetilbury.com/uk/product/magic-foundation-flawless-long-lasting-coverage' },
+      { brand: 'Revolution', shade: 'Fair F1', price: 8, priceRange: 'low', affiliate: 'https://revolutionbeauty.com/uk/en/makeup/face/foundation/conceal-define-foundation' },
+      { brand: 'Bourjois', shade: 'Porcelain', price: 14, priceRange: 'medium', affiliate: 'https://bourjois.co.uk/products/healthy-mix-foundation' },
+      { brand: 'No7', shade: 'Fair Ivory', price: 16, priceRange: 'medium', affiliate: 'https://boots.com/no7-stay-perfect-foundation-spf-15' },
+      { brand: 'Sleek', shade: 'Fair Rose', price: 10, priceRange: 'low', affiliate: 'https://sleekmakeup.com/products/creme-to-powder-foundation' }
     ],
     concealer: [
-      { brand: 'Charlotte Tilbury', shade: 'Fair', price: 32, priceRange: 'high', affiliate: 'https://example.com/charlotte-concealer' },
-      { brand: 'Revolution', shade: 'Light', price: 6, priceRange: 'low', affiliate: 'https://example.com/revolution-concealer' }
+      { brand: 'Charlotte Tilbury', shade: 'Fair', price: 32, priceRange: 'high', affiliate: 'https://charlottetilbury.com/uk/product/magic-away-liquid-concealer' },
+      { brand: 'Revolution', shade: 'Light', price: 6, priceRange: 'low', affiliate: 'https://revolutionbeauty.com/uk/en/makeup/face/concealer/conceal-define-concealer' }
     ],
     highlighter: [
-      { brand: 'Charlotte Tilbury', shade: 'Champagne', price: 38, priceRange: 'high', affiliate: 'https://example.com/charlotte-highlighter' }
+      { brand: 'Charlotte Tilbury', shade: 'Champagne', price: 38, priceRange: 'high', affiliate: 'https://charlottetilbury.com/uk/product/filmstar-bronze-glow' }
     ],
     lipstick: [
-      { brand: 'Charlotte Tilbury', shade: 'Pillow Talk', price: 34, priceRange: 'high', affiliate: 'https://example.com/charlotte-lipstick' },
-      { brand: 'Revolution', shade: 'Rouge', price: 5, priceRange: 'low', affiliate: 'https://example.com/revolution-lipstick' }
+      { brand: 'Charlotte Tilbury', shade: 'Pillow Talk', price: 34, priceRange: 'high', affiliate: 'https://charlottetilbury.com/uk/product/k-i-s-s-i-n-g-lipstick-pillow-talk' },
+      { brand: 'Revolution', shade: 'Rouge', price: 5, priceRange: 'low', affiliate: 'https://revolutionbeauty.com/uk/en/makeup/lips/lipstick/satin-kiss-lipstick' }
     ],
     blush: [
-      { brand: 'Charlotte Tilbury', shade: 'Love Glow', price: 38, priceRange: 'high', affiliate: 'https://example.com/charlotte-blush' }
+      { brand: 'Charlotte Tilbury', shade: 'Love Glow', price: 38, priceRange: 'high', affiliate: 'https://charlottetilbury.com/uk/product/cheek-to-chic-blush' }
     ]
   },
   uae: {
     foundation: [
-      { brand: 'Huda Beauty', shade: 'Milkshake', price: 40, priceRange: 'high', affiliate: 'https://example.com/huda-foundation' },
-      { brand: 'Mikyajy', shade: 'Fair Porcelain', price: 25, priceRange: 'medium', affiliate: 'https://example.com/mikyajy-foundation' },
-      { brand: 'Faces', shade: 'Ivory Cool', price: 18, priceRange: 'medium', affiliate: 'https://example.com/faces-foundation' },
-      { brand: 'Yasmin Beauty', shade: 'Fair Rose', price: 22, priceRange: 'medium', affiliate: 'https://example.com/yasmin-foundation' }
+      { brand: 'Huda Beauty', shade: 'Milkshake', price: 40, priceRange: 'high', affiliate: 'https://hudabeauty.com/us/en_US/face/foundation/fauxfilter-foundation' },
+      { brand: 'Mikyajy', shade: 'Fair Porcelain', price: 25, priceRange: 'medium', affiliate: 'https://mikyajy.com/face/foundation' },
+      { brand: 'Faces', shade: 'Ivory Cool', price: 18, priceRange: 'medium', affiliate: 'https://facescosmetics.com/products/ultime-pro-hd-studio-foundation' },
+      { brand: 'Yasmin Beauty', shade: 'Fair Rose', price: 22, priceRange: 'medium', affiliate: 'https://yasminbeauty.com/collections/foundation' }
     ],
     concealer: [
-      { brand: 'Huda Beauty', shade: 'Fair', price: 30, priceRange: 'high', affiliate: 'https://example.com/huda-concealer' }
+      { brand: 'Huda Beauty', shade: 'Fair', price: 30, priceRange: 'high', affiliate: 'https://hudabeauty.com/us/en_US/face/concealer/overachiever-concealer' }
     ],
     highlighter: [
-      { brand: 'Huda Beauty', shade: 'Winter Solstice', price: 38, priceRange: 'high', affiliate: 'https://example.com/huda-highlighter' }
+      { brand: 'Huda Beauty', shade: 'Winter Solstice', price: 38, priceRange: 'high', affiliate: 'https://hudabeauty.com/us/en_US/face/highlighter/3d-highlighter-palette' }
     ],
     lipstick: [
-      { brand: 'Huda Beauty', shade: 'Trophy Wife', price: 20, priceRange: 'medium', affiliate: 'https://example.com/huda-lipstick' }
+      { brand: 'Huda Beauty', shade: 'Trophy Wife', price: 20, priceRange: 'medium', affiliate: 'https://hudabeauty.com/us/en_US/lips/liquid-matte/liquid-matte-lipstick' }
     ],
     blush: [
-      { brand: 'Huda Beauty', shade: 'Desert Rose', price: 32, priceRange: 'high', affiliate: 'https://example.com/huda-blush' }
+      { brand: 'Huda Beauty', shade: 'Desert Rose', price: 32, priceRange: 'high', affiliate: 'https://hudabeauty.com/us/en_US/face/blush/gloweight-blush' }
     ]
   },
   france: {
     foundation: [
-      { brand: 'L\'Oréal Paris', shade: 'Ivory Rose', price: 15, priceRange: 'medium', affiliate: 'https://example.com/loreal-france-foundation' },
-      { brand: 'Lancôme', shade: 'Ivoire', price: 48, priceRange: 'high', affiliate: 'https://example.com/lancome-foundation' },
-      { brand: 'Yves Saint Laurent', shade: 'B10', price: 52, priceRange: 'high', affiliate: 'https://example.com/ysl-foundation' },
-      { brand: 'Bourjois', shade: 'Vanilla', price: 14, priceRange: 'medium', affiliate: 'https://example.com/bourjois-france-foundation' }
+      { brand: 'L\'Oréal Paris', shade: 'Ivory Rose', price: 15, priceRange: 'medium', affiliate: 'https://loreal-paris.fr/maquillage/teint/fond-de-teint/infaillible-24h-fresh-wear' },
+      { brand: 'Lancôme', shade: 'Ivoire', price: 48, priceRange: 'high', affiliate: 'https://lancome.fr/maquillage/teint/fond-de-teint/teint-idole-ultra-wear' },
+      { brand: 'Yves Saint Laurent', shade: 'B10', price: 52, priceRange: 'high', affiliate: 'https://yslbeauty.fr/maquillage/teint/fond-de-teint/all-hours-foundation' },
+      { brand: 'Bourjois', shade: 'Vanilla', price: 14, priceRange: 'medium', affiliate: 'https://bourjois.fr/produits/healthy-mix-fond-de-teint' }
     ],
     concealer: [
-      { brand: 'Lancôme', shade: 'Ivoire', price: 32, priceRange: 'high', affiliate: 'https://example.com/lancome-concealer' }
+      { brand: 'Lancôme', shade: 'Ivoire', price: 32, priceRange: 'high', affiliate: 'https://lancome.fr/maquillage/teint/correcteur/effacernes-longue-tenue' }
     ],
     highlighter: [
-      { brand: 'YSL', shade: 'Or Gold', price: 45, priceRange: 'high', affiliate: 'https://example.com/ysl-highlighter' }
+      { brand: 'YSL', shade: 'Or Gold', price: 45, priceRange: 'high', affiliate: 'https://yslbeauty.fr/maquillage/teint/enlumineur/touche-eclat-shimmer-stick' }
     ],
     lipstick: [
-      { brand: 'YSL', shade: 'Rouge Pur', price: 38, priceRange: 'high', affiliate: 'https://example.com/ysl-lipstick' },
-      { brand: 'L\'Oréal Paris', shade: 'Rouge Signature', price: 12, priceRange: 'low', affiliate: 'https://example.com/loreal-lipstick' }
+      { brand: 'YSL', shade: 'Rouge Pur', price: 38, priceRange: 'high', affiliate: 'https://yslbeauty.fr/maquillage/levres/rouge-a-levres/rouge-pur-couture' },
+      { brand: 'L\'Oréal Paris', shade: 'Rouge Signature', price: 12, priceRange: 'low', affiliate: 'https://loreal-paris.fr/maquillage/levres/rouge-a-levres/rouge-signature' }
     ],
     blush: [
-      { brand: 'Lancôme', shade: 'Rose Fresque', price: 40, priceRange: 'high', affiliate: 'https://example.com/lancome-blush' }
+      { brand: 'Lancôme', shade: 'Rose Fresque', price: 40, priceRange: 'high', affiliate: 'https://lancome.fr/maquillage/teint/blush/blush-subtil' }
     ]
   },
   indonesia: {
     foundation: [
-      { brand: 'Wardah', shade: 'Light Beige', price: 12, priceRange: 'low', affiliate: 'https://example.com/wardah-foundation' },
-      { brand: 'Emina', shade: 'Fair Natural', price: 10, priceRange: 'low', affiliate: 'https://example.com/emina-foundation' },
-      { brand: 'Sariayu', shade: 'Fair Ivory', price: 15, priceRange: 'medium', affiliate: 'https://example.com/sariayu-foundation' },
-      { brand: 'Cathy Doll', shade: 'Fair Pink', price: 8, priceRange: 'low', affiliate: 'https://example.com/cathy-foundation' }
+      { brand: 'Wardah', shade: 'Light Beige', price: 12, priceRange: 'low', affiliate: 'https://wardahbeauty.com/id/product/lightening-liquid-foundation' },
+      { brand: 'Emina', shade: 'Fair Natural', price: 10, priceRange: 'low', affiliate: 'https://eminacosmetics.com/product/bare-with-me-mineral-compact-powder' },
+      { brand: 'Sariayu', shade: 'Fair Ivory', price: 15, priceRange: 'medium', affiliate: 'https://sariayu.co.id/product/duo-foundation' },
+      { brand: 'Cathy Doll', shade: 'Fair Pink', price: 8, priceRange: 'low', affiliate: 'https://cathydoll.co.id/products/speed-white-cc-cream' }
     ],
     concealer: [
-      { brand: 'Wardah', shade: 'Light', price: 8, priceRange: 'low', affiliate: 'https://example.com/wardah-concealer' }
+      { brand: 'Wardah', shade: 'Light', price: 8, priceRange: 'low', affiliate: 'https://wardahbeauty.com/id/product/lightening-concealer' }
     ],
     highlighter: [
-      { brand: 'Emina', shade: 'Glow Up', price: 12, priceRange: 'low', affiliate: 'https://example.com/emina-highlighter' }
+      { brand: 'Emina', shade: 'Glow Up', price: 12, priceRange: 'low', affiliate: 'https://eminacosmetics.com/product/bright-stuff-highlighter' }
     ],
     lipstick: [
-      { brand: 'Wardah', shade: 'Pink Berry', price: 10, priceRange: 'low', affiliate: 'https://example.com/wardah-lipstick' },
-      { brand: 'Sariayu', shade: 'Classic Red', price: 12, priceRange: 'low', affiliate: 'https://example.com/sariayu-lipstick' }
+      { brand: 'Wardah', shade: 'Pink Berry', price: 10, priceRange: 'low', affiliate: 'https://wardahbeauty.com/id/product/colorfit-ultralight-matte-lipstick' },
+      { brand: 'Sariayu', shade: 'Classic Red', price: 12, priceRange: 'low', affiliate: 'https://sariayu.co.id/product/color-trend-lipstick' }
     ],
     blush: [
-      { brand: 'Emina', shade: 'Peachy', price: 8, priceRange: 'low', affiliate: 'https://example.com/emina-blush' }
+      { brand: 'Emina', shade: 'Peachy', price: 8, priceRange: 'low', affiliate: 'https://eminacosmetics.com/product/my-sweat-blush' }
     ]
   },
   global: {
     foundation: [
-      { brand: 'Maybelline', shade: 'Fair Ivory', price: 12, priceRange: 'low', affiliate: 'https://example.com/maybelline-global-foundation' },
-      { brand: 'L\'Oréal', shade: 'Ivory', price: 15, priceRange: 'medium', affiliate: 'https://example.com/loreal-global-foundation' },
-      { brand: 'Revlon', shade: 'Buff', price: 10, priceRange: 'low', affiliate: 'https://example.com/revlon-foundation' },
-      { brand: 'CoverGirl', shade: 'Fair', price: 8, priceRange: 'low', affiliate: 'https://example.com/covergirl-foundation' }
+      { brand: 'Maybelline', shade: 'Fair Ivory', price: 12, priceRange: 'low', affiliate: 'https://maybelline.com/products/face-makeup/foundation/fit-me-matte-poreless-foundation' },
+      { brand: 'L\'Oréal', shade: 'Ivory', price: 15, priceRange: 'medium', affiliate: 'https://loreal-paris.com/products/makeup/face/foundation/infallible-up-to-24hr-fresh-wear-foundation' },
+      { brand: 'Revlon', shade: 'Buff', price: 10, priceRange: 'low', affiliate: 'https://revlon.com/products/face/foundation/colorstay-makeup' },
+      { brand: 'CoverGirl', shade: 'Fair', price: 8, priceRange: 'low', affiliate: 'https://covergirl.com/en_us/products/face/foundation/outlast-active-24-hour-foundation' }
     ],
     concealer: [
-      { brand: 'Maybelline', shade: 'Fair', price: 8, priceRange: 'low', affiliate: 'https://example.com/maybelline-concealer' }
+      { brand: 'Maybelline', shade: 'Fair', price: 8, priceRange: 'low', affiliate: 'https://maybelline.com/products/face-makeup/concealer/fit-me-concealer' }
     ],
     highlighter: [
-      { brand: 'L\'Oréal', shade: 'Golden Hour', price: 14, priceRange: 'low', affiliate: 'https://example.com/loreal-highlighter' }
+      { brand: 'L\'Oréal', shade: 'Golden Hour', price: 14, priceRange: 'low', affiliate: 'https://loreal-paris.com/products/makeup/face/highlighter/true-match-lumi-powder-glow-illuminator' }
     ],
     lipstick: [
-      { brand: 'Maybelline', shade: 'Red Revival', price: 9, priceRange: 'low', affiliate: 'https://example.com/maybelline-lipstick' },
-      { brand: 'Revlon', shade: 'Pink In The Afternoon', price: 10, priceRange: 'low', affiliate: 'https://example.com/revlon-lipstick' }
+      { brand: 'Maybelline', shade: 'Red Revival', price: 9, priceRange: 'low', affiliate: 'https://maybelline.com/products/lip-makeup/lipstick/superstay-matte-ink-liquid-lipstick' },
+      { brand: 'Revlon', shade: 'Pink In The Afternoon', price: 10, priceRange: 'low', affiliate: 'https://revlon.com/products/lips/lipstick/super-lustrous-lipstick' }
     ],
     blush: [
-      { brand: 'Maybelline', shade: 'Pink Amber', price: 7, priceRange: 'low', affiliate: 'https://example.com/maybelline-blush' }
+      { brand: 'Maybelline', shade: 'Pink Amber', price: 7, priceRange: 'low', affiliate: 'https://maybelline.com/products/face-makeup/blush/fit-me-blush' }
     ]
   }
 };
